@@ -1,0 +1,20 @@
+<main class="profile_main">
+    <img src="../../../assets/img/bg1.jpg">
+    <div class="profile_container">
+        <div class="current_profile">
+            <img src="{{currentUser.url}}" />
+            <span>{{currentUser.name}}</span>
+            <span>{{currentUser.surname}}</span>
+            <span>{{currentUser.email}}</span>
+        </div>
+        <div class="edit_profile">
+            <h2>Edit your profile</h2>
+            <input type="text" placeholder="Name" #name>
+            <input type="text" placeholder="Surname" #surname>
+            <input type="text" placeholder="Email" #email>
+            <input type="url" placeholder="URL" #url>
+            <button mat-raised-button color="accent"
+                (click)="update({name: name.value, surname: surname.value,email: email.value, url: url.value})">Confirm</button>
+        </div>
+    </div>
+</main>

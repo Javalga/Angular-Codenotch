@@ -1,0 +1,30 @@
+<main class="books_main">
+    <img src="../../../assets/img/bg1.jpg" class='background' #background>
+    <form>
+        <h2>Add a book to the collection</h2>
+        <input type="text" placeholder="Title" #title>
+        <input type="text" placeholder="Genre" #genre>
+        <input type="text" placeholder="Author" #author>
+        <input type="number" placeholder="Price" #price>
+        <input type="url" placeholder="Photo URL" #url>
+        <button mat-raised-button color="accent"
+            (click)="createAndPush(title.value, genre.value, author.value, price.value, url.value)"
+            type="button">Create</button>
+    </form>
+</main>
+
+<!-- <mat-form-field appearance="fill">
+    <mat-label>Input</mat-label>
+    <input matInput>
+</mat-form-field>
+<mat-form-field appearance="fill">
+    <mat-label>Select</mat-label>
+    <mat-select>
+        <mat-option value="one">First option</mat-option>
+        <mat-option value="two">Second option</mat-option>
+    </mat-select>
+</mat-form-field>
+<mat-form-field appearance="fill">
+    <mat-label>Textarea</mat-label>
+    <textarea matInput></textarea>
+</mat-form-field> -->

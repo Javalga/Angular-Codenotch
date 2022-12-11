@@ -1,0 +1,15 @@
+<main class="login_main">
+  <form #userForm="ngForm" (ngSubmit)="login(userForm)">
+    <div class="title_container">
+      <h2>Login</h2>
+    </div>
+    <div class="input_container">
+      <input type="email" placeholder="Email" name="email" [(ngModel)]="user.email" email required>
+    </div>
+    <div class="input_container">
+      <input type="password" placeholder="Password" name="password" [(ngModel)]="user.password" required>
+    </div>
+    <button mat-raised-button color="accent">Login</button>
+  </form>
+</main>
+<!-- (click)="login(name.value, surname.value, mail.value, url.value, password.value, repeat_password.value)" -->

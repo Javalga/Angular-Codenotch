@@ -1,12 +1,12 @@
 footer {
   background-color: var(--primary-color1);
-  padding: 2em;
+  padding: 1em;
   display: flex;
   gap: 2em;
 }
 
 footer > img {
-  width: 2.5%;
+  width: 2.1%;
   border-radius: 50%;
   cursor: pointer;
 }

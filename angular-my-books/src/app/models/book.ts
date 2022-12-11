@@ -1,16 +1,16 @@
 export class Book {
-  public book_id: number;
-  public user_id: number;
+  public id_book: number;
+  public id_user: number;
   public title: string;
-  public bookType: string;
+  public type: string;
   public author: string;
   public price: number
   public photo: string
-  constructor(book_id: number = 0, user_id: number = 0, title: string, bookType: string, author: string, price: number, photo: string,) {
-    this.book_id = book_id;
-    this.user_id = user_id;
+  constructor(id_book: number, id_user: number, title: string, type: string, author: string, price: number, photo: string) {
+    this.id_book = id_book;
+    this.id_user = id_user;
     this.title = title;
-    this.bookType = bookType;
+    this.type = type;
     this.author = author;
     this.price = price;
     this.photo = photo;

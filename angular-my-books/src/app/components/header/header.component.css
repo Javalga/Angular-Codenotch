@@ -2,24 +2,43 @@ header {
   width: 100%;
   display: flex;
   background-color: var(--primary-color1);
-  padding: 1em;
-  padding-left: 2em;
+  padding: 2em;
   align-items: center;
-  gap: 3%;
+  justify-content: space-between;
+  position: fixed;
+  z-index: 9999999999999999;
+  max-height: 10vh;
 }
 
-header > img {
-  width: 3%;
+.links > img {
+  width: 5%;
   cursor: pointer;
 }
-
-header > a {
-  font-size: 2.2rem;
+.links {
+  display: flex;
+  width: 30%;
+  justify-content: space-between;
+}
+.logged {
+  width: 40%;
+}
+.links > a {
+  font-size: 2rem;
   color: #fff;
   cursor: pointer;
 }
 
-header > a:hover {
+.links > a:hover {
   transition: 100ms ease-in-out all;
   scale: 110%;
+}
+
+header > span {
+  color: white;
+}
+
+@media screen and (max-width: 1000px) {
+  .links {
+    width: 60% !important;
+  }
 }

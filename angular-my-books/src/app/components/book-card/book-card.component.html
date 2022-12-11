@@ -1,0 +1,13 @@
+<div class="book_card">
+    <div class="card_head">
+        <img src={{book.photo}} class="head_img" />
+    </div>
+    <div class="card_body">
+        <div class="title"><strong>{{book.title}}</strong></div>
+        <p>{{book.id_book.toString() | bookRef}}</p>
+        <p>Genre: {{book.type}}</p>
+        <p>Author: {{book.author}}</p>
+        <p>Price: {{book.price}}</p>
+        <button class="closeBtn" (click)="deleteBookChild(book.id_book)" [ngClass]="{'evenBg': isEven}">Delete</button>
+    </div>
+</div>

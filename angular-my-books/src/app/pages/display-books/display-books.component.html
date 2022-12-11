@@ -1,42 +1,21 @@
 <main class="books_main">
-    <img src="../../../assets/img/bg1.jpg" class='background' #background>
-    <input class="searchBar" type="number" placeholder="Search by ID" #id (change)="searchBarHandler(id.value)">
-    <div *ngIf="books.length === 0; else books_container">
-        <h2>There's no books.</h2>
-    </div>
-    <ng-template #books_container>
-        <ng-container *ngIf="id.value; else allBooks">
-            <div class="book_card">
-                <div class=" card_head">
-                    <img src={{selectedBook.photo}} class="head_img" />
-                </div>
-                <div class="card_body">
-                    <div class="title"><strong>{{selectedBook.title}}</strong></div>
-                    <p>{{selectedBook.book_id.toString() | bookRef}}</p>
-                    <p>Genre: {{selectedBook.bookType}}</p>
-                    <p>Author: {{selectedBook.author}}</p>
-                    <p>Price: {{selectedBook.price}}</p>
-                    <button class="closeBtn">Delete</button>
-                </div>
-            </div>
-        </ng-container>
-        <ng-template #allBooks>
-            <div class="books_container">
-                <div class="book_card" *ngFor="let book of books; even as isEven;">
-                    <div class="card_head">
-                        <img src={{book.photo}} [ngClass]="{'evenBorder': isEven}" class="head_img" />
-                    </div>
-                    <div class="card_body">
-                        <div class="title"><strong>{{book.title}}</strong></div>
-                        <p>{{book.book_id.toString() | bookRef}}</p>
-                        <p>Genre: {{book.bookType}}</p>
-                        <p>Author: {{book.author}}</p>
-                        <p>Price: {{book.price}}</p>
-                        <button class="closeBtn" (click)="deleteBook(book.book_id)">Delete</button>
-                    </div>
-                </div>
-            </div>
-        </ng-template>
-
+  <div *ngIf="bookService.books.length === 0; else books_container">
+    <h2>There's no books.</h2>
+  </div>
+  <ng-template #books_container>
+    <div class="searchBarContainer"><input class="searchBar" type="number" placeholder="Search by ID" #id
+        (change)="searchBarHandler(id.value)"></div>
+    <ng-container *ngIf="id.value; else allBooks">
+      <div class="book_card">
+        <app-book-card [book]="selectedBook"></app-book-card>
+      </div>
+    </ng-container>
+    <ng-template #allBooks>
+      <div class="books_container">
+        <app-book-card *ngFor="let book of bookService.books; even as isEven; index as index" [isEven]="isEven"
+          [book]="book" (deleteEvent)="deleteBook($event)"></app-book-card>
+      </div>
     </ng-template>
+
+  </ng-template>
 </main>

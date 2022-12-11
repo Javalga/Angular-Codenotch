@@ -1,8 +1,20 @@
-<header>
-    <img src="../../../assets/img/logo.png" />
+<header *ngIf='UserService.isLogged === false; else logged'>
+  <div class="links">
     <a routerLink="/home">Home</a>
     <a routerLink="/register">Register</a>
-    <a routerLink="/profile">Profile</a>
-    <a routerLink="/books">Books</a>
-    <a routerLink="/addBook">Add book</a>
+    <a routerLink="/login">Login</a>
+  </div>
+  <span>Login: <strong>{{UserService.isLogged}}</strong></span>
 </header>
+<ng-template #logged>
+  <header>
+    <div class="links logged">
+      <a routerLink="/home">Home</a>
+      <a routerLink="/profile">Profile</a>
+      <a routerLink="/books">Books</a>
+      <a routerLink="/addBook">Add book</a>
+      <a routerLink="/editBook">Edit book</a>
+    </div>
+    <span>Login: <strong>{{UserService.isLogged}}</strong></span>
+  </header>
+</ng-template>

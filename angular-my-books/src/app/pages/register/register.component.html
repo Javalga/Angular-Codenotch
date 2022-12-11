@@ -1,27 +1,46 @@
 <main class="register_main">
-    <img src="../../../assets/img/bg1.jpg">
-    <form>
-        <div class="title_container">
-            <h2>Register to join our community!</h2>
-        </div>
-        <div class="input_container">
-            <input type="text" placeholder="Name">
-        </div>
-        <div class="input_container">
-            <input type="text" placeholder="Surname">
-        </div>
-        <div class="input_container">
-            <input type="email" placeholder="Email">
-        </div>
-        <div class="input_container">
-            <input type="text" placeholder="URL">
-        </div>
-        <div class="input_container">
-            <input type="password" placeholder="Password">
-        </div>
-        <div class="input_container">
-            <input type="password" placeholder="Repeat password">
-        </div>
-        <button mat-raised-button color="accent" type="button">Register</button>
-    </form>
+  <form #userForm="ngForm" (ngSubmit)="register(userForm, repeatPasswordId.value)">
+    <div class="title_container">
+      <h2>Register to join our community!</h2>
+    </div>
+    <div class="input_container">
+      <input type="text" placeholder="Name" class='form-control' name="name" [(ngModel)]="user.name" #nameId="ngModel"
+        [ngClass]="{'is-invalid': (nameId.touched || nameId.dirty) && nameId.invalid}" required>
+      <span [ngClass]="{'invalidSpan': (nameId.touched || nameId.dirty) && nameId.invalid}">Name is
+        required</span>
+    </div>
+    <div class="input_container">
+      <input type="text" placeholder="Surname" class='form-control' name="surname" [(ngModel)]="user.surname"
+        #surnameId="ngModel" [ngClass]="{'is-invalid':  (surnameId.touched || surnameId.dirty) && surnameId.invalid}"
+        required>
+      <span [ngClass]="{'invalidSpan': (surnameId.touched || surnameId.dirty)&& surnameId.invalid}">Surname is
+        required</span>
+    </div>
+    <div class=" input_container">
+      <input type="email" placeholder="Email" class='form-control' name="email" [(ngModel)]="user.email"
+        #emailId="ngModel" email required
+        [ngClass]="{'is-invalid':  (emailId.touched || emailId.dirty) && emailId.invalid}">
+      <span [ngClass]="{'invalidSpan': (emailId.touched || emailId.dirty) && emailId.invalid}">Email is
+        invalid</span>
+    </div>
+    <div class="input_container">
+      <input type="text" placeholder="Photo URL" class='form-control' name="photo" [(ngModel)]="user.photo"
+        #photoId="ngModel" required [ngClass]="{'is-invalid':  (photoId.touched || photoId.dirty) && photoId.invalid}">
+      <span [ngClass]="{'invalidSpan': (photoId.touched ||photoId.dirty) && photoId.invalid}">Photo is
+        required</span>
+    </div>
+    <div class="input_container">
+      <input type="password" placeholder="Password" class='form-control' name="password" [(ngModel)]="user.password"
+        #passwordId="ngModel" required
+        [ngClass]="{'is-invalid':  (passwordId.touched || passwordId.dirty) && passwordId.invalid}">
+      <span [ngClass]="{'invalidSpan': (passwordId.touched ||passwordId.dirty) && passwordId.invalid}">Password is
+        required</span>
+    </div>
+    <div class="input_container">
+      <input type="password" placeholder="Repeat password" class='form-control' name="repeatPassword"
+        [(ngModel)]="user.repeatPassword" #repeatPasswordId="ngModel" required
+        [ngClass]="{'is-invalid':  (repeatPasswordId.touched || repeatPasswordId.dirty) && repeatPasswordId.invalid}">
+    </div>
+    <button class="btn">Register</button>
+  </form>
 </main>

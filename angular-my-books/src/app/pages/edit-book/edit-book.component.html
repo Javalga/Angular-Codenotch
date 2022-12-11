@@ -1,0 +1,14 @@
+<main class="books_main">
+    <form>
+        <h2>Edit a book of the collection</h2>
+        <input type="number" placeholder="Book ID" #id_book>
+        <input type="text" placeholder="Title" #title>
+        <input type="text" placeholder="Type" #type>
+        <input type="text" placeholder="Author" #author>
+        <input type="number" placeholder="Price" #price>
+        <input type="url" placeholder="Photo URL" #url>
+        <button mat-raised-button color="accent"
+            (click)="editAndPush(id_book.value,title.value, type.value, author.value, price.value, url.value)"
+            type="button">Create</button>
+    </form>
+</main>

@@ -12,7 +12,7 @@ export class BookCardComponent {
   @Output() deleteEvent = new EventEmitter<any>()
   constructor() { }
   deleteBookChild(id: number) {
-    let currentId = id.toString();
+    let currentId = id;
     this.deleteEvent.emit(currentId)
   }
 }

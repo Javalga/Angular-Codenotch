@@ -17,7 +17,7 @@
 }
 
 .register_main > form {
-  padding: 3em;
+  padding: 3em 0;
   z-index: 9999;
   width: 30%;
   background-color: rgb(85, 113, 83, 0.6);
@@ -33,6 +33,7 @@
 }
 .title_container > h2 {
   font-size: 3rem;
+  text-align: center;
 }
 .input_container {
   display: flex;
@@ -41,10 +42,10 @@
   justify-content: center;
   width: 100%;
   position: relative;
-  margin-bottom: 1.3em;
+  margin-bottom: 0.8em;
 }
 .input_container > input {
-  padding: 0.7em;
+  padding: 0.6em;
   margin-bottom: 0.2em;
   font-size: 2rem;
   width: 70%;
@@ -59,11 +60,12 @@
 }
 
 form > button {
-  width: 30%;
+  width: 70%;
   padding: 0.5em;
   color: white;
   background-color: var(--secondary-color1) !important;
-  font-size: 1.5rem !important;
+  font-size: 2rem !important;
+  margin-top: 1em;
 }
 
 .input_container > span {

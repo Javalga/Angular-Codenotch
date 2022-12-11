@@ -59,3 +59,55 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+@media screen and (max-width: 1250px) {
+  :root {
+    font-size: 8px;
+  }
+  .login_main > form {
+    width: 70% !important;
+  }
+  .register_main > form {
+    padding: 3em 0 !important;
+    font-size: 4px;
+    width: 60% !important;
+  }
+  .register_main > form > .title_container > h2 {
+    font-size: 3rem !important;
+    margin-bottom: 1em;
+  }
+  .landing_main > h2 {
+    font-size: 5rem !important;
+  }
+  footer > img {
+    width: 3.5% !important;
+  }
+  .profile_container {
+    width: 90% !important;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  :root {
+    font-size: 8px;
+  }
+  .login_main > form {
+    width: 100% !important;
+  }
+  .register_main > form {
+    width: 100% !important;
+  }
+  .landing_main > h2 {
+    font-size: 4rem !important;
+  }
+  footer > img {
+    width: 5% !important;
+  }
+  .profile_container {
+    width: 100% !important;
+  }
+  .edit_profile > input,
+  .current_profile > span {
+    width: 100% !important;
+  }
+}
